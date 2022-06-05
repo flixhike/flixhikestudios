@@ -1,6 +1,6 @@
 <style>:root {
-    --theme-color:#a00000;
-    --theme-color-light: #a00000;
+    --theme-color:linear-gradient(red, blue);
+    --theme-color-light:linear-gradient(red, blue);
 }
 
 html {
@@ -14,10 +14,11 @@ body {
     text-decoration: none;
     max-width: 450px;
     text-align: center;
-    box-shadow: 1px 2px 50px #56C9F5;
+    box-shadow: 1px 2px 50px linear-gradient(red, blue);
     padding-bottom: 85px;
-    background-image: url('#');
+    background-image: repeat linear-gradient(red,blue);
     background-attachment: fixed;
+    
 }
 
 a {
@@ -321,7 +322,7 @@ a.share{min-width:80px;}
 /* Card  Starts */
 .card {
     text-align: left;
-    background-color: #fcea24;
+    background-color: linear-gradient(yellow, red);
     padding: 20px;
     max-width: 100%;
     margin: 0 auto;
