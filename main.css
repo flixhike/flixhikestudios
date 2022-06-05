@@ -1,0 +1,285 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body 
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #0c192c;
+}
+.container 
+{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+.bubbles 
+{
+	position: relative;
+	display: flex;
+}
+.bubbles span 
+{
+	position: relative;
+	min-width: 30px;
+	height: 30px;
+	background: #4fc3dc;
+	box-shadow: 0 0 0 10px #4fc3dc44,
+	0 0 50px #4fc3dc,
+	0 0 100px #4fc3dc;
+	margin: 0 4px;
+	border-radius: 50%;
+	animation: animate 15s linear infinite;
+	animation-duration: calc(75s / var(--i));
+}
+.bubbles span:nth-child(even) 
+{
+	background: #ff2d75;
+	box-shadow: 0 0 0 10px #ff2d7544,
+	0 0 50px #ff2d75,
+	0 0 100px #ff2d75;
+}
+@keyframes animate 
+{
+	0% 
+	{
+		transform: translateY(100vh) scale(0);
+	}
+	100% 
+	{
+		transform: translateY(-10vh) scale(1);
+	}
+}
+
+body 
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #222327;
+}
+.navigation 
+{
+	position: relative;
+	width: 400px;
+	height: 60px;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+}
+.navigation ul 
+{
+	display: flex;
+	width: 350px;
+}
+.navigation ul li 
+{
+	list-style: none;
+	position: relative;
+	/* 350 / 5 = 70 */
+	width: 70px;
+	height: 60px;
+	z-index: 2;
+}
+.navigation ul li a 
+{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	text-align: center;
+}
+.navigation ul li a .icon 
+{
+	position: relative;
+	display: block;
+	line-height: 65px;
+	font-size: 1.5em;
+	width: 55px;
+	height: 55px;
+	border-radius: 50%;
+	transition: 0.5s;
+	transition-delay: 0s;
+	color: #222327;
+}
+.navigation ul li.active a .icon 
+{
+	transform: translateY(-27px);
+	color: #fff;
+	transition-delay: 0.25s;
+	background: var(--clr);
+}
+.navigation ul li a .icon::before
+{
+	content: '';
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: 0.5s;
+	transition-delay: 0s;
+	border-radius: 50%;
+	background: var(--clr);
+	filter: blur(5px);
+	opacity: 0;
+}
+.navigation ul li.active a .icon::before
+{
+	transition-delay: 0.5s;
+	opacity: 0.5;
+}
+.indicator 
+{
+	position: absolute;
+	top: -35px;
+	width: 70px;
+	height: 70px;
+	background: #fff;
+	border-radius: 50%;
+	z-index: 1;
+	transition: 0.5s;
+}
+.indicator::before 
+{
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: -28px;
+	width: 30px;
+	height: 30px;
+	background: transparent;
+	border-radius: 50%;
+	box-shadow: 15px 18px #fff;
+}
+.indicator::after 
+{
+	content: '';
+	position: absolute;
+	top: 5px;
+	right: -28px;
+	width: 30px;
+	height: 30px;
+	background: transparent;
+	border-radius: 50%;
+	box-shadow: -15px 18px #fff;
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator 
+{
+	transform: translateX(calc(70px * 0));
+}
+.navigation ul li:nth-child(2).active ~ .indicator 
+{
+	transform: translateX(calc(70px * 1));
+}
+.navigation ul li:nth-child(3).active ~ .indicator 
+{
+	transform: translateX(calc(70px * 2));
+}
+.navigation ul li:nth-child(4).active ~ .indicator 
+{
+	transform: translateX(calc(70px * 3));
+}
+.navigation ul li:nth-child(5).active ~ .indicator 
+{
+	transform: translateX(calc(70px * 4));
+}
+
+
+#time 
+{
+	display: flex;
+	gap: 40px;
+}
+
+#time .circle
+{
+	position: relative;
+	width: 150px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#time .circle svg 
+{
+	position: relative;
+	width: 150px;
+	height: 150px;
+	transform: rotate(270deg);
+}
+#time .circle svg circle 
+{
+	width: 100%;
+	height: 100%;
+	fill: transparent;
+	stroke-width: 4;
+	stroke-linecap: round;
+	stroke: #191919;
+	transform: translate(5px,5px);
+}
+#time .circle svg circle:nth-child(2)
+{
+	stroke: var(--clr);
+	stroke-dasharray: 440;
+}
+
+#time div 
+{
+	position: absolute;
+	text-align: center;
+	font-weight: 500;
+	color: #fff;
+	font-size: 1.5em;
+}
+#time div span 
+{
+	position: absolute;
+	transform: translateX(-50%) translateY(-10px);
+	font-size: 0.35em;
+	font-weight: 300;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+#time .ap 
+{
+	position: relative;
+	font-size: 1em;
+	transform: translateX(-20px);
+}
+
+
+.dots 
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	z-index: 10;
+}
+.dots::before 
+{
+	content: '';
+	position: absolute;
+	top: -3px;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background: var(--clr);
+	box-shadow: 0 0 20px var(--clr),
+	
